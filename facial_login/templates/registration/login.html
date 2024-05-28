@@ -1,0 +1,21 @@
+<!-- templates/registration/login.html -->
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content %}
+  <div class="m-3 text-left">
+    <h2>Log In</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form }}
+      <div class="form-group row mt-3 align-items-start" style="margin: 0 0 1% 2%;">
+      <button type="submit" class="btn btn-primary">Log In</button>
+      </div>
+    </form>
+    <a href="{% url 'password_reset' %}" class="btn btn-secondary mt-3">Forgot Password</a>
+    <a href="{% url 'signup' %}" class="btn btn-secondary mt-3">New here? Sign up here</a>
+  </div>
+{% endblock %}

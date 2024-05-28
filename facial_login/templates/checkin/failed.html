@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+  <div class="container">
+    {% if result == 'Spoof' %}
+      <h1 class="display-1" style="color: red;">Warning!</h1>
+      <h1>You are trying to spoof/fake the checkin/checkout. This will lead to serious consequences</h1>
+    {% elif result == 'Different' %}
+      <h1 class="display-1" style="color: yellow;">Error!</h1>
+      <h1>Face does not match</h1>
+    {% endif %}
+    <a href="{% url "index" %}">Checkin Again Here</a>
+  </div>
+{% endblock %}
